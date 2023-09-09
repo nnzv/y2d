@@ -1,16 +1,18 @@
-Simplify your Anki flashcard workflow creation effortlessly with this approach.
+# Effortless Anki Flashcard Creation
+
+Creating Anki flashcards can be simple and efficient with this approach.
 
 ## Key Features
 
-* **YAML Deck Configuration**: Define decks using YAML code.
+* **YAML Deck Setup**: Define decks using YAML code.
 * **Markdown Formatting**: Format 'back' and 'front' fields with Markdown.
-* **Title and Description Support**: Customize each deck with a title and description.
+* **Custom Titles and Descriptions**: Personalize each deck with titles and descriptions.
 * **Code Highlighting**: Highlight code using Markdown extensions.
 * **Three Card Types**: Create Basic, Cloze, and Prompt cards.
-    1. Basic: Front and back flashcards.
+    1. Basic: Both front and back flashcards.
     2. Cloze: Supports Cloze deletion notation.
-    3. Prompt: Ask users for answers.
-* **Tagging**: Organize cards efficiently with tags.
+    3. Prompt: Engage users by prompting them for answers.
+* **Tagging**: Efficiently organize cards with tags.
 
 ## Requirements
 
@@ -18,7 +20,7 @@ Simplify your Anki flashcard workflow creation effortlessly with this approach.
 
 ## Demonstration
 
-1. Create a Virtual Environment
+1. Set Up a Virtual Environment
    ```sh
    % python3 -m venv venv
    ```
@@ -28,19 +30,18 @@ Simplify your Anki flashcard workflow creation effortlessly with this approach.
    % source venv/bin/activate
    ```
 
-3. Install Requirements
+3. Install Dependencies
    ```sh
    % python3 -r requirements.txt
    ```
 
-4. Test Run
+4. Test the Workflow
    ```sh
    % python3 cli.py dev-lang
    ```
 
-Organize decks into directories for effective management. When you provide a directory as an argument to the 'cli.py' script, each .yml file in that directory 
-becomes a deck in `.apkg` file format. While adding support for `.yaml` extensions is possible, it's not a priority. This project is open source, so _feel free 
-to fork and customize it_!
+When you provide a directory as an argument to the 'cli.py' script, each .yml file in that directory becomes a deck in `.apkg` file format. While adding support for `.yaml` extensions is 
+possible, it's not a priority. This project is open source, so _feel free to fork and customize it_!
 
 To create a standalone deck:
 ```sh
@@ -49,13 +50,12 @@ To create a standalone deck:
 
 For a combination of complex decks:
 ```sh
-% python3 cli.py dev-lang/go.yml,another/card.yml
+% python3 cli.py dev-lang/go.yml another-directory/card.yml
 ```
 
 ## Flashcard Structure
 
-To create a flashcard, you need to follow a specific YAML structure like the example below. This structure helps generate a `.apkg` file, which is the Anki 
-deck format.
+To create a flashcard, follow this YAML structure:
 
 ```yaml
 id: 637500
@@ -64,7 +64,6 @@ metadata:
   description: |
     A brief introduction to Go programming.
 cards:
-
   - card: Basic
     metadata:
       title: Write some code
@@ -79,7 +78,7 @@ cards:
         `go mod init example/hello`
 ```
 
-Here's a breakdown of what each part does:
+Here's what each part does:
 
 - `id`: This is a unique identifier for your deck.
 - `metadata`:
@@ -89,10 +88,10 @@ Here's a breakdown of what each part does:
   - `card`: Choose the type of flashcard you want to create (e.g., Basic, Cloze, or Prompt).
   - `metadata`:
     - `title`: Give your flashcard a title or heading.
-    - `resource`: Optionally, you can include a link to related content.
+    - `resource`: Optionally, include a link to related content.
     - `tags`: Use tags to categorize and organize your flashcards.
   - `spec`:
     - `front`: The content displayed on the front side of the flashcard, typically a question.
     - `back`: The content displayed on the back side of the flashcard, which provides the answer or additional information.
 
-Once you've defined your flashcards, you can organize them in a directory if you want to keep them alongside other decks. The choice is yours, and it helps you stay organized as you build your Anki card collection.
+After defining your flashcards, you can organize them in a directory to keep them alongside other decks. This choice is yours and helps you maintain a well-organized Anki card collection.
