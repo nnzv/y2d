@@ -1,0 +1,5 @@
+genanki==0.13.0
+Markdown==3.4.4
+Pygments==2.16.1
+PyYAML==6.0.1
+slugify==0.0.1

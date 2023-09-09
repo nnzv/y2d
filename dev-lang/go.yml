@@ -1,0 +1,85 @@
+id: 637500
+metadata:
+  name: "Get started with Go"
+  description: |
+    In this deck, you'll get a brief introduction to Go programming. 
+cards:
+
+  - card: Basic
+    metadata:
+      title: Write some code
+      resource: https://go.dev/doc/tutorial/getting-started#code
+      tags: []
+    spec:
+      front: |
+        Steps to create "hello world" Go program?
+      back: |
+        First create a directory, navigate to it, and initialize a Go module using
+
+        `go mod init example/hello`
+
+  - card: Basic
+    metadata:
+      title: Write some code
+      resource: https://go.dev/doc/tutorial/getting-started#code
+      tags: []
+    spec:
+      front: |
+        What does a basic hello world Go program look like?
+      back: |
+        ```{ .go }
+        package main
+
+        import "fmt"
+
+        func main() {
+            fmt.Println("Hello, World!")
+        }
+        ```
+
+  - card: Prompt
+    metadata:
+      title: Write some code
+      resource: https://go.dev/doc/tutorial/getting-started#code
+      tags: []
+    spec:
+      front: |
+        How do you run a Go program?
+      back: "go run"
+
+  - card: Basic
+    metadata:
+      title: Call code in an external package
+      resource: https://go.dev/doc/tutorial/getting-started#call
+      tags: []
+    spec:
+      front: |
+        How can you use functions from an external Go package in your code?
+      back: |
+        Import the package and call its functions. For example
+        ```{ .go hl_lines="5 8"}
+        package main
+
+        import "fmt"
+
+        import "rsc.io/quote"
+
+        func main() {
+            fmt.Println(quote.Go())
+        }
+        ```
+
+  - card: Cloze
+    metadata:
+      title: Call code in an external package
+      resource: https://go.dev/doc/tutorial/getting-started#call
+      tags: []
+    spec:
+      front: |
+        Running `{{c1::go mod tidy}}` adds module requirements and sums for imported packages.
+      back: |
+        ```{ .text }
+        $ go mod tidy
+        go: finding module for package rsc.io/quote
+        go: found rsc.io/quote in rsc.io/quote v1.5.2
+        ```
