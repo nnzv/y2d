@@ -2,7 +2,7 @@
 <!-- Use of this source code is governed by a BSD-style -->
 <!-- license that can be found in the LICENSE file. -->
 
-# Sypnosis
+## Sypnosis
 
 Creating Anki flashcards can be simple and efficient with this approach.
 
@@ -100,6 +100,6 @@ Here's what each part does:
 
 After defining your flashcards, you can organize them in a directory to keep them alongside other decks. This choice is yours and helps you maintain a well-organized Anki card collection.
 
-# License
+## License
 
 Source files are distributed under the BSD-style license found in the `LICENSE` file
