@@ -2,64 +2,80 @@
 <!-- Use of this source code is governed by a BSD-style -->
 <!-- license that can be found in the LICENSE file. -->
 
-## Sypnosis
+# Sypnosis
 
-Creating Anki flashcards can be simple and efficient with this approach.
+I made this project to simplify Anki deck creation using YAML text files. Now, let's explore its key features.
 
-## Key Features
+## Automation
 
-* **YAML Deck Setup**: Define decks using YAML code.
-* **Markdown Formatting**: Format 'back' and 'front' fields with Markdown.
-* **Custom Titles and Descriptions**: Personalize each deck with titles and descriptions.
-* **Code Highlighting**: Highlight code using Markdown extensions.
-* **Three Card Types**: Create Basic, Cloze, and Prompt cards.
-    1. Basic: Both front and back flashcards.
-    2. Cloze: Supports Cloze deletion notation.
-    3. Prompt: Engage users by prompting them for answers.
-* **Tagging**: Efficiently organize cards with tags.
+This eliminates the need for manual intervention. You can specify the location of your YAML files to the program, which 
+will then autonomously convert them into Anki decks.
 
-## Requirements
+## Simplicity
 
-* Python 3
+This project keeps things easy and uncomplicated in a few ways:
 
-## Demonstration
+1. **Card Templates**: Instead of having a ton of different card styles to choose from, it offers just three: "Basic," "Prompt," and "Cloze." These are like different layouts for your flashcards. You pick the one that fits your needs best.
+2. **Markdown**: Easily style your text with Markdown, currently available for ".spec.front" and ".spec.back" fields. To expand this support to other areas, consider forking the project.
+3. **Code Highlighting**: If you're into programming, this project also helps you make your code look good in your flashcards. 
 
-1. Set Up a Virtual Environment
+# Getting Started
+
+To begin using this Anki deck creator, ensure you have Python 3 installed on your system. Follow these simple steps to set up your environment and install the necessary dependencies:
+
+1. Create a Python virtual environment:
+
    ```sh
-   % python3 -m venv venv
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-2. Activate the Environment
+2. Install the required dependencies:
+
    ```sh
-   % source venv/bin/activate
+   pip3 install -r requirements.txt
    ```
 
-3. Install Dependencies
-   ```sh
-   % python3 -r requirements.txt
-   ```
+# Quick Demonstration
 
-4. Test the Workflow
-   ```sh
-   % python3 cli.py dev-lang
-   ```
+Generate your first Anki deck with this simple command:
 
-When you provide a directory as an argument to the `cli.py` script, each `.yml` file in that directory becomes a deck in `.apkg` file format. While adding support for `.yaml` extensions is 
-possible, it's not a priority. This project is open source, so _feel free to fork and customize it_!
-
-To create a standalone deck:
 ```sh
-% python3 cli.py dev-lang/go.yml
+python3 cli.py dev-lang
 ```
 
-For a combination of complex decks:
-```sh
-% python3 cli.py dev-lang/go.yml another-directory/deck.yml
+You'll receive a confirmation log message like this:
+
+```
+Deck 'Get started with Go' written to get-started-with-go.apkg
 ```
 
-## Flashcard Structure
+Import the generated `.apkg` file into Anki, and you've successfully created and imported your first deck.
 
-To create a flashcard, follow this YAML structure:
+# Workflow
+
+Here's how the workflow unfolds:
+
+1. Organize your decks effortlessly by adding directories as needed.
+
+2. Within each directory, define your decks using YAML files. For instance, in the 'dev-lang' directory, you'll discover a deck named 'go.yml'.
+
+   ```
+   .
+   |-- cli.py
+   `-- dev-lang
+       `-- go.yml
+   ```
+
+3. If you want to create multiple decks, it's as simple as running this command:
+
+   ```sh
+   python3 cli.py dev-lang/go.yml another-category/deck.yml
+   ```
+
+# Flashcard Structure
+
+To craft flashcards using this project, follow the YAML structure provided below as a guideline:
 
 ```yaml
 id: 637500
@@ -82,24 +98,24 @@ cards:
         `go mod init example/hello`
 ```
 
-Here's what each part does:
+This structure is composed of the following elements:
 
-- `id`: This is a unique identifier for your deck.
+- `id`: A unique identifier for your deck.
 - `metadata`:
-  - `name`: Specify the title or name of your deck.
-  - `description`: Add a short and concise description of your deck.
-- `cards`: This section contains an array of individual flashcard entries.
-  - `card`: Choose the type of flashcard you want to create (e.g., Basic, Cloze, or Prompt).
+  - `name`: The title or name of your deck.
+  - `description`: A concise deck description.
+- `cards`: An array of individual flashcard entries.
+  - `card`: Choose the type of flashcard (e.g., Basic, Cloze, or Prompt).
   - `metadata`:
-    - `title`: Give your flashcard a title or heading.
+    - `title`: Flashcard title or heading.
     - `resource`: Optionally, include a link to related content.
-    - `tags`: Use tags to categorize and organize your flashcards.
+    - `tags`: Use tags for easy categorization.
   - `spec`:
-    - `front`: The content displayed on the front side of the flashcard, typically a question.
-    - `back`: The content displayed on the back side of the flashcard, which provides the answer or additional information.
+    - `front`: Content displayed on the front side (usually a question).
+    - `back`: Content displayed on the back side (providing the answer or additional information).
 
-After defining your flashcards, you can organize them in a directory to keep them alongside other decks. This choice is yours and helps you maintain a well-organized Anki card collection.
+With this structure, you can create well-organized flashcards for your Anki card collection.
 
-## License
+# License
 
-Source files are distributed under the BSD-style license found in the `LICENSE` file
+Source files are distributed under the BSD-style license found in the `LICENSE` file.
