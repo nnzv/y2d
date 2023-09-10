@@ -44,7 +44,7 @@ Creating Anki flashcards can be simple and efficient with this approach.
    % python3 cli.py dev-lang
    ```
 
-When you provide a directory as an argument to the 'cli.py' script, each .yml file in that directory becomes a deck in `.apkg` file format. While adding support for `.yaml` extensions is 
+When you provide a directory as an argument to the `cli.py` script, each `.yml` file in that directory becomes a deck in `.apkg` file format. While adding support for `.yaml` extensions is 
 possible, it's not a priority. This project is open source, so _feel free to fork and customize it_!
 
 To create a standalone deck:
