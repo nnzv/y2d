@@ -54,7 +54,7 @@ To create a standalone deck:
 
 For a combination of complex decks:
 ```sh
-% python3 cli.py dev-lang/go.yml another-directory/card.yml
+% python3 cli.py dev-lang/go.yml another-directory/deck.yml
 ```
 
 ## Flashcard Structure
