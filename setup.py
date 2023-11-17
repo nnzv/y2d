@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(
     name='y2d',
     version='0.0.1',
-    description='Generate Anki decks from YAML files or directories',
+    description='Generate Anki packages from YAML files',
     author='Enzo Venturi',
     author_email='nzventuri@proton.me',
     url='https://gitlab.com/nzv/y2d',
