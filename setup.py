@@ -9,7 +9,7 @@ setup(
     version='0.0.1',
     description='Generate Anki decks from YAML files or directories',
     author='Enzo Venturi',
-    author_email='zventuri@tuta.io',
+    author_email='nzventuri@proton.me',
     url='https://git.sr.ht/~nzv/y2d',
     packages=find_packages(),
     install_requires=[
