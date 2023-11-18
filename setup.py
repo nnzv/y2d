@@ -9,7 +9,6 @@ setup(
     version='0.0.1',
     description='Generate Anki packages from YAML files',
     author='Enzo Venturi',
-    author_email='nzventuri@proton.me',
     url='https://gitlab.com/nzv/y2d',
     packages=find_packages(),
     install_requires=[
