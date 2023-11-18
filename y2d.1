@@ -1,0 +1,73 @@
+.TH y2d 1 "d???" "v???" "User Commands"
+
+.SH NAME
+y2d \- YAML files to .apkg
+
+.SH SYNOPSIS
+.B y2d
+[\fIOPTION\fR]... [\fIFILE\fR]...
+
+.SH DESCRIPTION
+\fBy2d\fR is a command designed to convert both individual YAML files and entire directories containing YAML files into Anki packages (.apkg files).
+
+.SH OPTIONS
+.TP
+.B \-h, \-\-help
+Display help message and exit
+
+.TP
+.B \-\-md-exts [EXT [EXT ...]]
+List of Markdown extensions to enable (default: "extra", "codehilite").
+
+.TP
+.B \-\-pygment-style STYLE
+Style of Pygments formatter (default: "default").
+
+.TP
+.B \-\-version
+Display the version information and exit.
+
+.TP
+.B \-\-force
+Overwrite existing files without prompting.
+
+.SH EXAMPLES
+Generate Anki decks from a YAML file:
+
+    y2d file.yaml
+
+Generate Anki decks from multiple YAML files:
+
+    y2d file1.yaml file2.yaml
+
+Generate Anki decks from directories:
+
+    y2d dir1 dir2
+
+.SH YAML STRUCTURE
+
+Here's a simple and basic structure:
+
+    id: 637500
+    metadata:
+    - name: My Deck
+    - description: A deck of sample flashcards
+    cards:
+        - card: Basic
+          metadata:
+            - title: Sample Card 1
+            - resource: https://example.com/resource1
+            - tags:
+                - Tag1
+                - Tag2
+          spec:
+            - front: Front of the card
+            - back: Back of the card
+    #...
+
+.SH THANKS
+This tool is built on top of the 'genanki' library. Credit goes to its creator.
+
+.SH COPYRIGHT
+Copyright 2023 Enzo Venturi. This program is free software and you can redistribute it 
+and/or modify it under the terms of the BSD-style license.
